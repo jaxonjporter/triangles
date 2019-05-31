@@ -5,8 +5,6 @@ const App = () => {
   const [triangle, setTriangle] = useState([])
 
   const renderTriangle = () => {
-    validateTriangle(triangle)
-
     return (
       <TriangleForm setTriangle={setTriangle} />
       )
@@ -16,16 +14,15 @@ const App = () => {
     <>
     <h1>This will be triangles</h1>
     {renderTriangle()}
+    {validateTriangle(triangle)}
     </>
   );
 }
 
 const validateTriangle = (triangle) => {
   let tri = triangle.sort(function(a, b){return a-b})
-  console.log(tri)
   if (tri[0]+tri[1] > tri[2]){
-    console.log('valid')
-    checkType(tri)
+    return checkType(tri)
   } else {
     console.log('invalid')
   }
@@ -33,13 +30,13 @@ const validateTriangle = (triangle) => {
 
 const checkType = (tri) => {
   if (tri[0] === tri[1] && tri[1] === tri[2]){
-    console.log('equilateral')
+    return <p>equilateral</p>
   } else if (tri[0] === tri[1] || tri[0] === tri[2] || tri[1] === tri[2]){
-    console.log('isocolese')
+    return <p>Isoscelese</p>
   } else if (tri[0]**2 + tri[1]**2 === tri[2]**2){
-    console.log('right scalene')
+    return <p>right Scalene</p>
   } else {
-    console.log('scalene')
+    return <p>scalene</p>
   }
 }
 
