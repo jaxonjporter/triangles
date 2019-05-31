@@ -21,10 +21,13 @@ const App = () => {
 
 const validateTriangle = (triangle) => {
   let tri = triangle.sort(function(a, b){return a-b})
+  console.log(triangle)
   if (tri[0]+tri[1] > tri[2]){
     return checkType(tri)
+  } else if (triangle.length > 0) {
+    return <p>Invalid Triangle</p>
   } else {
-    console.log('invalid')
+    return <p>Please enter sides</p>
   }
 }
 
