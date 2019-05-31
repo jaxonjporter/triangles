@@ -1,21 +1,16 @@
-import React, {useState, } from 'react';
+import React, { useState, } from 'react'
 import TriangleForm from './components/TriangleForm'
+import styled from 'styled-components'
 
 const App = () => {
   const [triangle, setTriangle] = useState([])
 
-  const renderTriangle = () => {
-    return (
-      <TriangleForm setTriangle={setTriangle} />
-      )
-  }
-
   return (
-    <>
-    <h1>Triangle Types</h1>
-    {renderTriangle()}
-    {validateTriangle(triangle)}
-    </>
+    <Container>
+      <h1>Triangle Types</h1>
+      <TriangleForm setTriangle={setTriangle} />
+      {validateTriangle(triangle)}
+    </Container>
   );
 }
 
@@ -42,6 +37,14 @@ const checkType = (tri) => {
   }
 }
 
+const Container = styled.div`
+  padding: 0% 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`
 
 
-export default App;
+
+export default App
