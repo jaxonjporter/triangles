@@ -34,9 +34,13 @@ const validateTriangle = (triangle) => {
 const checkType = (tri) => {
   if (tri[0] === tri[1] && tri[1] === tri[2]){
     console.log('equilateral')
+  } else if (tri[0] === tri[1] || tri[0] === tri[2] || tri[1] === tri[2]){
+    console.log('isocolese')
   } else if (tri[0]**2 + tri[1]**2 === tri[2]**2){
-    console.log('right')
-  } 
+    console.log('right scalene')
+  } else {
+    console.log('scalene')
+  }
 }
 
 
