@@ -3,14 +3,14 @@ import { useSideInput, } from "../hooks/useSideInput";
 
 
 const TriangleForm = ({ setTriangle }) => {
-  const a = useSideInput(1)
-  const b = useSideInput(1)
-  const c = useSideInput(1)
+  const a = useSideInput('')
+  const b = useSideInput('')
+  const c = useSideInput('')
 
   const handleSubmit = (e) => {
-    let triangle = {a: a.value, b: b.value, c: c.value}
+    let triangle = [parseInt(a.value), parseInt(b.value), parseInt(c.value)]
     e.preventDefault();
-    setTriangle({...triangle})
+    setTriangle(triangle)
   }
 
   return (
