@@ -10,8 +10,7 @@ const TriangleForm = ({ setTriangle }) => {
 
 
   useEffect ( () => {
-    debugger
-    if (a !== '' && b !== '' && c !== '' ){
+    if (a.value !== "" && b.value !== "" && c.value !== "" ){
       let triangle = [parseFloat(a.value), parseFloat(b.value), parseFloat(c.value)]
       setTriangle(triangle)
     }
@@ -31,7 +30,7 @@ const TriangleForm = ({ setTriangle }) => {
 
 
 const Input = styled.input`
-  width: 20%;
+  width: 40%;
   min-width: 200px;
   background-color: white;
   border: none;
