@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <>
-    <h1>This will be triangles</h1>
+    <h1>Triangle Types</h1>
     {renderTriangle()}
     {validateTriangle(triangle)}
     </>
@@ -21,7 +21,6 @@ const App = () => {
 
 const validateTriangle = (triangle) => {
   let tri = triangle.sort(function(a, b){return a-b})
-  console.log(triangle)
   if (tri[0]+tri[1] > tri[2]){
     return checkType(tri)
   } else if (triangle.length > 0) {
