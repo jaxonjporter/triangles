@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, } from 'react'
 import { useSideInput, } from "../hooks/useSideInput";
 import styled from 'styled-components'
 
@@ -8,27 +8,27 @@ const TriangleForm = ({ setTriangle }) => {
   const b = useSideInput('')
   const c = useSideInput('')
 
-  const handleSubmit = (e) => {
-    let triangle = [parseFloat(a.value), parseFloat(b.value), parseFloat(c.value)]
-    e.preventDefault();
-    setTriangle(triangle)
-  }
+
+  useEffect ( () => {
+    debugger
+    if (a !== '' && b !== '' && c !== '' ){
+      let triangle = [parseFloat(a.value), parseFloat(b.value), parseFloat(c.value)]
+      setTriangle(triangle)
+    }
+  })
 
   return (
-  <Form onSubmit={handleSubmit}>
+  <form>
     <label>Side A</label>
     <Input name='a' value={a} type='number' step='any' min='0.01' {...a} required />
     <label>Side B</label>
     <Input name='b' value={b} type='number' step='any' min='0.01' {...b} required />
     <label>Side C</label>
     <Input name='c' value={c} type='number' step='any' min='0.01' {...c} required />
-    <button>Submit</button>
-  </Form>
+  </form>
   )
 }
 
-const Form = styled.form`
-`
 
 const Input = styled.input`
   width: 20%;
