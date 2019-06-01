@@ -13,6 +13,8 @@ const TriangleForm = ({ setTriangle }) => {
     if (a.value !== "" && b.value !== "" && c.value !== "" ){
       let triangle = [parseFloat(a.value), parseFloat(b.value), parseFloat(c.value)]
       setTriangle(triangle)
+    } else {
+      setTriangle([])
     }
   })
 
