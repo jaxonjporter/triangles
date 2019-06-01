@@ -12,7 +12,6 @@ const Triangles = () => {
   return (
     <Container>
       <Center>
-
         <DivExplain>
           <Title>Triangle Type Calculator</Title>
           <SubTitle>This calculator will determine the type of triangle given three sides. Enter the side lengths in the boxes below.</SubTitle>
@@ -119,7 +118,7 @@ const DivForm = styled.div`
   box-shadow: 2px 2px 5px #7f7f7f;
   border-radius: 5px;
   margin: 5px;
-  min-height: 50vh;
+  min-height: 350px;
   text-align: center;
 
 
